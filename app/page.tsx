@@ -44,7 +44,7 @@ export default function HomePage() {
   ]
 
   const features = [
-    "Revisi Unlimited",
+    "Revisi",
     "Harga Terjangkau",
     "Tim Profesional",
     "Support 24/7",
