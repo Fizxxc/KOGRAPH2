@@ -41,8 +41,8 @@ export default function AdminOrdersPage() {
           ordersList.push({
             id: doc.id,
             ...doc.data(),
-            createdAt: doc.data().createdAt?.toDate() || new Date(),
-            updatedAt: doc.data().updatedAt?.toDate() || new Date(),
+            createdAt: doc.data().createdAt ?? null,
+            updatedAt: doc.data().updatedAt ?? null,
           } as Order)
         })
         setOrders(ordersList)

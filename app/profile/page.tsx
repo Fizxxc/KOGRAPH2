@@ -48,8 +48,8 @@ export default function ProfilePage() {
           orders.push({
             id: doc.id,
             ...doc.data(),
-            createdAt: doc.data().createdAt?.toDate() || new Date(),
-            updatedAt: doc.data().updatedAt?.toDate() || new Date(),
+            createdAt: doc.data().createdAt ?? null,
+            updatedAt: doc.data().updatedAt ?? null,
           } as Order)
         })
 
@@ -156,7 +156,7 @@ export default function ProfilePage() {
                   <div>
                     <p className="text-xs text-muted-foreground">Bergabung</p>
                     <p className="text-sm font-medium">
-                      {userProfile.createdAt ? formatDate(new Date(userProfile.createdAt)) : "-"}
+                      {userProfile.createdAt ? formatDate(userProfile.createdAt) : "-"}
                     </p>
                   </div>
                 </div>

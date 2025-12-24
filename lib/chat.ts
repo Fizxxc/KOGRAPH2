@@ -54,7 +54,7 @@ export function subscribeToMessages(conversationId: string, callback: (messages:
       messages.push({
         id: doc.id,
         ...doc.data(),
-        createdAt: doc.data().createdAt?.toDate() || new Date(),
+       createdAt: doc.data().createdAt ?? null,
       } as ChatMessage)
     })
     callback(messages)

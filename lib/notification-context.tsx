@@ -32,7 +32,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
         notifs.push({
           id: doc.id,
           ...doc.data(),
-          createdAt: doc.data().createdAt?.toDate() || new Date(),
+          createdAt: doc.data().createdAt ?? null,
         } as Notification)
       })
       setNotifications(notifs)

@@ -18,16 +18,35 @@ export function formatCurrency(amount: number): string {
   return formatPrice(amount)
 }
 
-export function formatDate(date: Date | string): string {
-  const d = typeof date === "string" ? new Date(date) : date
+export function formatDate(value: any): string {
+  if (!value) return "-";
+
+  let date: Date;
+
+  // Firestore Timestamp
+  if (value.seconds) {
+    date = new Date(value.seconds * 1000);
+  }
+  // Sudah Date
+  else if (value instanceof Date) {
+    date = value;
+  }
+  // String / number
+  else {
+    date = new Date(value);
+  }
+
+  if (isNaN(date.getTime())) return "-";
+
   return new Intl.DateTimeFormat("id-ID", {
     day: "numeric",
     month: "long",
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-  }).format(d)
+  }).format(date);
 }
+
 
 export function getStatusColor(status: string): string {
   switch (status) {

@@ -57,8 +57,8 @@ export default function AdminDashboard() {
           orders.push({
             id: doc.id,
             ...doc.data(),
-            createdAt: doc.data().createdAt?.toDate() || new Date(),
-            updatedAt: doc.data().updatedAt?.toDate() || new Date(),
+            createdAt: doc.data().createdAt ?? null,
+            updatedAt: doc.data().updatedAt ?? null,
           } as Order)
         })
 
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
         notifs.push({
           id: doc.id,
           ...doc.data(),
-          createdAt: doc.data().createdAt?.toDate() || new Date(),
+          createdAt: doc.data().createdAt ?? null,
         } as Notification)
       })
       setNotifications(notifs.slice(0, 5))

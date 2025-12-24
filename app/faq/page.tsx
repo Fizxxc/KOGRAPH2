@@ -22,7 +22,7 @@ const defaultFaqs: FAQ[] = [
     id: "2",
     question: "Apakah ada revisi?",
     answer:
-      "Ya, kami menyediakan revisi unlimited untuk memastikan hasil sesuai dengan keinginan Anda. Revisi dilakukan hingga Anda puas dengan hasilnya.",
+      "Ya, kami menyediakan revisi tergantung yang di berikan di produk kami, untuk memastikan hasil sesuai dengan keinginan Anda.",
     order: 2,
     isActive: true,
   },
@@ -46,7 +46,7 @@ const defaultFaqs: FAQ[] = [
     id: "5",
     question: "Bagaimana jika tidak puas dengan hasil?",
     answer:
-      "Kepuasan Anda adalah prioritas kami. Jika tidak puas, kami akan melakukan revisi hingga sesuai ekspektasi. Jika masih tidak puas, kami menawarkan refund sesuai ketentuan.",
+      "Kepuasan Anda adalah prioritas kami. Jika tidak puas, kami akan melakukan revisi hingga sesuai ekspektasi. Jika masih tidak puas, kami menawarkan revisi tambahan.",
     order: 5,
     isActive: true,
   },
